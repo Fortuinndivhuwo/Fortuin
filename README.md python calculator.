@@ -14,25 +14,39 @@ def divide(num1, num2):
    return answer
    
 while True:
-   calculations = ["1.Addition", "2.Subtraction", "3.Multiplication", "4.Division"] 
+   calculations = ["1.Addition", "2.Subtraction", "3.Multiplication", "4.Division"]
+   print("****************")
    for i in calculations:
       print(i)
-   function = int(input("Enter the number of function you want to use(1/2/3/4): "))
-   num1, num2 = float(input("Enter your first term: ")),  float(input("Enter your second term: "))
+   print("*****************") 
+   choice = input("Enter 1/2/3/4 or 'q' if you want to exit: ")
+   if choice.lower() == "q":
+      print("Maths time over, Bye(^.^)")
+      break
+   function = int(choice)
    if function not in range(1,5):   
       print("Please enter(1/2/3/4) only")
-   elif num1.isdigits == False and num2.isdigits == False:
-      print("Please enter numeric terms"
-   elif function == 1:
+      continue
+   try:
+      num1 = float(input("Enter your first term: "))
+      num2 = float(input("Enter your second term: "))
+   except ValueError:
+      print("Please enter valid numbers only.")
+      continue 
+   
+   if function == 1:
       answer = add(num1, num2)
-      print(f"your answer is: {answer}")
+      print(f"(^.^)Your answer is: {answer}")
    elif function == 2:
       answer = minus(num1, num2)
-      print(f"your answer is: {answer}")
+      print(f"(^.^)Your answer is: {answer}")
    elif function == 3:
       answer = multiply(num1, num2)
-      print(f"your answer is: {answer}")
+      print(f"(^.^)Your answer is: {answer}")
    elif function == 4:
+      if num2 == 0:
+         print("undefined")
+         continue
       answer = divide(num1,num2)
-      print(f"your answer is: {answer}")
+      print(f"(^.^)Your answer is: {answer}")
    
