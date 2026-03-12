@@ -1,0 +1,21 @@
+#Create functions to add,minus,multiply and divide
+#Adding function
+def add(num1, num2):
+   answer = num1 + num2
+   return asnwer
+def minus(num1, num2):
+   answer = num1 - num2
+   return asnwer
+def multiply(num1, num2):
+   answer = num1 * num2
+   return asnwer  
+def divide(num1, num2):
+   answer = num1 / num2
+   return asnwer
+   
+while True:
+   calculatuons = ["1.Addition", "2.Subtraction", "3.Multiplication", "4.Division"] 
+   for i in calculations:
+      print(i)
+   function = int(input("Enter the number of function you want to use(1/2/3/4): “))
+   nums = float(input(
