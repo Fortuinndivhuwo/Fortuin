@@ -14,21 +14,25 @@ def divide(num1, num2):
    return answer
    
 while True:
-   calculatuons = ["1.Addition", "2.Subtraction", "3.Multiplication", "4.Division"] 
+   calculations = ["1.Addition", "2.Subtraction", "3.Multiplication", "4.Division"] 
    for i in calculations:
       print(i)
-   function = int(input("Enter the number of function you want to use(1/2/3/4): “))
-   num1, num2 = float(input("Enter your first term: ")),  float(input("Enter your second term: ")
-   if n not in range(4):   
+   function = int(input("Enter the number of function you want to use(1/2/3/4): "))
+   num1, num2 = float(input("Enter your first term: ")),  float(input("Enter your second term: "))
+   if function not in range(1,5):   
       print("Please enter(1/2/3/4) only")
    elif num1.isdigits == False and num2.isdigits == False:
-      print("Please enter numeric terms"l
+      print("Please enter numeric terms"
    elif function == 1:
-      add(num1, num2)
+      answer = add(num1, num2)
+      print(f"your answer is: {answer}")
    elif function == 2:
-      minus(num1, num2)
+      answer = minus(num1, num2)
+      print(f"your answer is: {answer}")
    elif function == 3:
-      multiply(num1, num2)
+      answer = multiply(num1, num2)
+      print(f"your answer is: {answer}")
    elif function == 4:
-      divide(num1,num2)
+      answer = divide(num1,num2)
+      print(f"your answer is: {answer}")
    
