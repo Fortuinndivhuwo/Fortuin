@@ -2,16 +2,16 @@
 #Adding function
 def add(num1, num2):
    answer = num1 + num2
-   return asnwer
+   return answer
 def minus(num1, num2):
    answer = num1 - num2
-   return asnwer
+   return answer
 def multiply(num1, num2):
    answer = num1 * num2
-   return asnwer  
+   return answer  
 def divide(num1, num2):
    answer = num1 / num2
-   return asnwer
+   return answer
    
 while True:
    calculatuons = ["1.Addition", "2.Subtraction", "3.Multiplication", "4.Division"] 
