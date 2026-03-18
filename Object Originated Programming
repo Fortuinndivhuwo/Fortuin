@@ -12,18 +12,24 @@ class Bank():
         self.balance += amount
         return self.name + f" your new balance is: R {self.balance}"
     def  withdraw(self, amount):
-         self.balance -= amount
-         return self.name + f" your remaining balance is R{self.balance}"
+         return self.name + f" your remaining balance is R{self.balance - amount}"
                  
         
-balance = 100       
+       
 while True:
         print("*" *24 + " NEPTEC " + "*" * 24)
-        name = input("Custumer please enter your name: ").upper()
+        name = input("Customer please enter your name: ").upper()
         if name.isalpha() == False:
             print("your name must not contain numbers")
             continue
-        custumer = Bank(name, balance)
+        while True:
+            try:
+                balance = float(input("Enter you balance"))
+                break
+            except ValueError:
+                print("Please enter numeric amount and + amount:")
+                continue
+        customer = Bank(name, balance)
         print("—" * 20)
         print("Welcome : " + name)
         print("—" * 20)
@@ -37,7 +43,7 @@ while True:
              
         if choice == 1:
              print("—" * 60)
-             print(custumer.get_balance())
+             print(customer.get_balance())
              print("—" * 60)
         elif choice == 2:     
             while True:
@@ -48,10 +54,10 @@ while True:
                 except ValueError:
                      print("Please enter numeric amount(123..): ")   
                 if amount < 0:
-                    print("You cannot depsit a negative amount")
+                    print("You cannot deposit a negative amount")
                 else:
                      break
-            print(custumer.deposit(amount)) 
+            print(customer.deposit(amount)) 
             print("*" * 60) 
           
         elif choice == 3:
@@ -60,11 +66,11 @@ while True:
                     amount = float(input("How much would you like to withdraw: "))
                 except ValueError:
                      print("Please enter numeric amount(123..): ")   
-                if amount < 0:
-                    print("You cannot depsit a negative amount")
+                if amount <= 0:
+                    print("You cannot withdraw a negative amount")
                 elif amount > balance:
-                    print("Bro you got that amount of money")   
+                    print("Bro you have that amount of money")   
                 else:
                      break      
-            print(custumer.withdraw(amount))
+            print(customer.withdraw(amount))
             print("*" * 60)               
